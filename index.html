@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Oprek Student Module</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b0f19;
+      --card: #11162a;
+      --accent: #6ae3ff;
+      --accent-2: #7cff6a;
+      --text: #e8ecf1;
+      --muted: #9aa4b2;
+      --danger: #ff6a6a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(1200px 600px at 10% -10%, #1a235a33, transparent),
+                  radial-gradient(800px 400px at 90% 10%, #0aa7ff22, transparent),
+                  var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+    }
+    header {
+      padding: 48px 20px 24px;
+      text-align: center;
+    }
+    .badge {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      color: #06121a;
+      font-weight: 700;
+      letter-spacing: .3px;
+      font-size: 12px;
+      margin-bottom: 14px;
+    }
+    h1 {
+      margin: 8px 0 10px;
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+    p.subtitle {
+      margin: 0 auto;
+      max-width: 720px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 24px 16px 64px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    @media (min-width: 900px) {
+      main { grid-template-columns: 380px 1fr; gap: 24px; }
+    }
+    .card {
+      background: linear-gradient(180deg, #141a35, var(--card));
+      border: 1px solid #1e264f;
+      border-radius: 20px;
+      box-shadow: 0 20px 40px #00000055;
+      padding: 18px;
+    }
+    .card h2 {
+      margin: 0 0 12px;
+      font-size: 18px;
+      font-weight: 700;
+    }
+    .field {
+      display: grid;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+    .field label {
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .field input {
+      background: #0e1430;
+      border: 1px solid #232b5c;
+      border-radius: 12px;
+      padding: 12px 14px;
+      color: var(--text);
+      outline: none;
+    }
+    .field input::placeholder { color: #6b74a6; }
+    .row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .actions { display: flex; gap: 10px; margin-top: 10px; }
+    button {
+      border: none;
+      border-radius: 14px;
+      padding: 12px 14px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .btn-primary {
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      color: #051018;
+    }
+    .btn-ghost {
+      background: transparent;
+      color: var(--text);
+      border: 1px dashed #2a3475;
+    }
+    .list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 14px;
+    }
+    .link-card {
+      background: #0e1430;
+      border: 1px solid #232b5c;
+      border-radius: 16px;
+      padding: 14px;
+      display: grid;
+      gap: 8px;
+      position: relative;
+      overflow: hidden;
+    }
+    .link-card::after {
+      content: '';
+      position: absolute;
+      inset: auto -40% -60% -40%;
+      height: 80px;
+      background: radial-gradient(60% 100% at 50% 100%, #6ae3ff33, transparent);
+    }
+    .tag {
+      align-self: flex-start;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 700;
+      background: #1c2458;
+      color: #b8c4ff;
+    }
+    .link-card h3 {
+      margin: 4px 0 0;
+      font-size: 16px;
+      font-weight: 700;
+    }
+    .link-card a {
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 13px;
+      word-break: break-all;
+    }
+    .link-card .controls {
+      display: flex;
+      gap: 8px;
+      margin-top: 6px;
+    }
+    .link-card .controls button {
+      padding: 8px 10px;
+      border-radius: 10px;
+      font-size: 12px;
+    }
+    .btn-open { background: #1b7cff; color: #fff; }
+    .btn-del { background: var(--danger); color: #1b0a0a; }
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 12px;
+      padding: 20px 10px 40px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <span class="badge">OPREK • STUDENT • MODULE</span>
+    <h1>Oprek Student Module</h1>
+    <p class="subtitle">
+      Cuma disini tempat download module paling lengkap guys
+    </p>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Daftar Modul & Resource</h2>
+      <p style="color: var(--muted); font-size: 13px; margin-top:-6px">
+        Semua modul di sini <b>siap di-download</b>. jika tidak menemukan module yang dicari bisa dm admin di tiktok.
+      </p>
+      <div class="list" id="staticList">
+       <div class="link-card">
+  <h3>LsPosed</h3>
+
+  <a href="https://sfl.gl/E76DP"
+     target="_blank"
+     rel="noopener noreferrer">
+
+    <button class="btn-open">
+      Download
+    </button>
+  </a>
+</div>
+
+<div class="link-card">
+  <h3>Module Znysu lock peforma</h3>
+
+  <a href="https://sfl.gl/3mLJWUS4"
+     target="_blank"
+     rel="noopener noreferrer">
+
+    <button class="btn-open">
+      Download
+    </button>
+  </a>
+</div>
+
+<div class="link-card">
+  <h3>Disable Thermal</h3>
+
+  <a href="https://sfl.gl/zBqJ2N"
+     target="_blank"
+     rel="noopener noreferrer">
+
+    <button class="btn-open">
+      Download
+    </button>
+  </a>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</section>
+<footer>
+    © 2025 — Oprek Student Module • The most complete free modules — only here.
+  </footer>
+
+  <script>
+    const listEl = document.getElementById('list');
+    let links = JSON.parse(localStorage.getItem('oprek_links') || '[]');
+
+    function save() {
+      localStorage.setItem('oprek_links', JSON.stringify(links));
+    }
+
+    function render() {
+      listEl.innerHTML = '';
+      links.forEach((item, index) => {
+        const card = document.createElement('div');
+        card.className = 'link-card';
+        card.innerHTML = `
+          <span class="tag">${item.tag || 'UNSORTED'}</span>
+          <h3>${item.name}</h3>
+          <a href="${item.url}" target="_blank">${item.url}</a>
+          <div class="controls">
+            <button class="btn-open" onclick="window.open('${item.url}', '_blank')">Buka</button>
+            <button class="btn-del" onclick="removeLink(${index})">Hapus</button>
+          </div>
+        `;
+        listEl.appendChild(card);
+      });
+    }
+
+    function addLink() {
+      const name = nameInput.value.trim();
+      const url = urlInput.value.trim();
+      const tag = tagInput.value.trim();
+      if (!name || !url) return alert('Nama dan URL wajib diisi!');
+      links.unshift({ name, url, tag });
+      save();
+      render();
+      nameInput.value = '';
+      urlInput.value = '';
+      tagInput.value = '';
+    }
+
+    function removeLink(i) {
+      links.splice(i, 1);
+      save();
+      render();
+    }
+
+    function clearAll() {
+      if (!confirm('Yakin hapus semua link?')) return;
+      links = [];
+      save();
+      render();
+    }
+
+    render();
+  </script>
+</body>
+</html>
